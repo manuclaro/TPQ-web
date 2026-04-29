@@ -1,0 +1,51 @@
+---
+// src/icons/IsotipoCircuitos.astro
+---
+<svg 
+  viewBox="0 0 100 100" 
+  class="w-full h-full text-emerald-500 drop-shadow-[0_0_8px_rgba(16,185,129,0.5)] transition-transform group-hover:scale-105 duration-500" 
+  fill="none" 
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs>
+    <filter id="glow-circuit" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <path 
+    d="M15 20 H55 M35 20 V85" 
+    stroke="currentColor" 
+    stroke-width="8" 
+    stroke-linecap="round" 
+    class="opacity-90"
+  />
+  
+  <g stroke="currentColor" stroke-width="2.5" filter="url(#glow-circuit)">
+    <path d="M35 40 C55 40 65 48 65 55 C65 62 55 70 35 70" stroke-linecap="round" />
+    <path d="M35 32 C65 32 78 45 78 55 C78 65 65 78 35 78" stroke-linecap="round" />
+    <path d="M35 25 C75 25 90 40 90 55 C90 70 75 85 35 85" stroke-linecap="round" />
+  </g>
+  
+  <g fill="currentColor">
+    <circle cx="15" cy="20" r="4" />
+    <circle cx="55" cy="20" r="4" />
+    
+    <circle cx="35" cy="25" r="2.5" />
+    <circle cx="35" cy="32" r="2.5" />
+    <circle cx="35" cy="40" r="2.5" />
+    
+    <circle cx="65" cy="55" r="2" />
+    <circle cx="78" cy="45" r="2.2" />
+    <circle cx="78" cy="65" r="2.2" />
+    <circle cx="90" cy="35" r="2.8" />
+    <circle cx="90" cy="55" r="2.8" />
+    <circle cx="90" cy="75" r="2.8" />
+  </g>
+
+  <circle cx="35" cy="85" r="6" fill="currentColor" class="animate-pulse text-white opacity-80" />
+</svg>
