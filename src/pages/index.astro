@@ -1,11 +1,53 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro"; // 1. Importamos el Header
+import Hero from "../components/Hero.astro";
+import Services from "../components/Services.astro";
+import ContactBtn from "../components/ContactBtn.astro";
+import "../styles/global.css";
+const whatsappNumber = "5492216225776";
 ---
 
 <Layout>
-	<Welcome />
+  <Header />
+
+  <main class="pt-20"> <Hero />
+
+    <Services id="servicios" /> <section class="py-24 px-6 border-t border-slate-800/60">
+      <div class="max-w-3xl mx-auto text-center">
+        <span class="inline-block text-emerald-400 text-sm font-semibold tracking-widest uppercase mb-6 border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 rounded-full">
+          Nuestra filosofía
+        </span>
+        <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-8">
+          "La tecnología debería ser <span class="text-emerald-400">invisible."</span>
+        </h2>
+        <div class="space-y-5 text-slate-400 text-lg leading-relaxed">
+          <p>
+            En <span class="text-white font-medium">TPQ Solutions</span> no te hablamos de lenguajes
+            de programación ni de servidores.
+          </p>
+          <p>
+            Nos sentamos con vos a entender dónde perdés tiempo o dónde se te escapan los números.
+            Creamos herramientas que se sienten naturales y que podés empezar a usar hoy mismo,
+            <span class="text-slate-300">sin manuales complicados.</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="border-t border-slate-800/60 py-10 px-6">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-slate-500 text-sm">
+        <span>&copy; {new Date().getFullYear()} TPQ Solutions. Todos los derechos reservados.</span>
+        <a
+            href={`https://wa.me/${whatsappNumber}`}
+            target="_blank"
+            class="text-emerald-400 hover:text-emerald-300 transition-colors"
+          >
+          Contacto por WhatsApp &rarr;
+        </a>
+      </div>
+    </footer>
+  </main>
+
+  <ContactBtn whatsappNumber={whatsappNumber} />
 </Layout>

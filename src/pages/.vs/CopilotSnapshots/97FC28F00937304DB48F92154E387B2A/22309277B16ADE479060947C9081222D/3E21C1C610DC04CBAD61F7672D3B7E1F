@@ -1,0 +1,80 @@
+﻿---
+const services = [
+  {
+    title: "Gestión Comercial",
+    description: "Controlá tu stock, registrá ventas y llevá las cuentas corrientes de tus clientes desde un solo lugar, sin complicaciones.",
+    tags: ["Stock", "Ventas", "Cuentas corrientes"],
+    icon: "store",
+  },
+  {
+    title: "Software a Medida",
+    description: "Herramientas diseñadas específicamente para tu actividad profesional. Nos adaptamos a tu forma de trabajar, no al revés.",
+    tags: ["Profesionales", "Personalizado", "Eficiencia"],
+    icon: "briefcase",
+  },
+  {
+    title: "Soluciones para el Agro",
+    description: "Llevá el control ganadero y el seguimiento de tu producción desde el celular, estés donde estés en el campo.",
+    tags: ["Ganadería", "Producción", "Móvil"],
+    icon: "leaf",
+  },
+];
+---
+
+<section id="servicios" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <span class="inline-block text-emerald-400 text-sm font-semibold tracking-widest uppercase mb-4 border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 rounded-full">
+        Lo que hacemos
+      </span>
+      <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Nuestros servicios</h2>
+      <p class="text-slate-400 mt-4 max-w-xl mx-auto">Soluciones concretas para los desafíos reales de tu día a día.</p>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {services.map((s) => (
+        <div class="group relative flex flex-col p-8 rounded-2xl border border-slate-800 bg-slate-900/40 hover:border-emerald-500/50 hover:-translate-y-1 hover:bg-slate-900/70 transition-all duration-300 cursor-default">
+          <!-- Icon -->
+          <div class="mb-6 w-12 h-12 flex items-center justify-center rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 group-hover:bg-emerald-500/20 transition-colors duration-300">
+            {s.icon === "store" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l1-6h16l1 6"/>
+                <path d="M3 9a2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0 2 2 2 2 0 0 0 2-2"/>
+                <path d="M5 11v8a1 1 0 0 0 1 1h4v-5h4v5h4a1 1 0 0 0 1-1v-8"/>
+              </svg>
+            )}
+            {s.icon === "briefcase" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2"/>
+                <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+                <line x1="12" y1="12" x2="12" y2="12.01"/>
+                <path d="M2 12h20"/>
+              </svg>
+            )}
+            {s.icon === "leaf" && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 7 0 6.5-4.8 11-10 11z"/>
+                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+              </svg>
+            )}
+          </div>
+
+          <!-- Content -->
+          <h3 class="text-xl font-semibold mb-3 text-white">{s.title}</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-1">{s.description}</p>
+
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-2">
+            {s.tags.map((tag) => (
+              <span class="text-xs text-emerald-400/80 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
